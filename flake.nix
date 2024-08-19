@@ -44,5 +44,10 @@
 
       devShells = forEachSystem (pkgs: import ./shell.nix { inherit pkgs; });
       formatter = forEachSystem (pkgs: pkgs.nixfmt-rfc-style);
+
+      nixosConfigurations = {
+        # Main desktop
+        keter = lib.nixosSystem { modules = [ ./hosts/keter ]; };
+      };
     };
 }
