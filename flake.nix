@@ -8,6 +8,10 @@
 
     hardware.url = "github:nixos/nixos-hardware";
 
+    nixos-wsl = {
+      url = "github:nix-community/nixos-wsl";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,6 +29,8 @@
       nixpkgs,
       home-manager,
       systems,
+      hardware,
+      nixos-wsl,
       ...
     }@inputs:
     let
@@ -46,8 +52,14 @@
       formatter = forEachSystem (pkgs: pkgs.nixfmt-rfc-style);
 
       nixosConfigurations = {
-        # Main desktop
-        keter = lib.nixosSystem { modules = [ ./hosts/keter ]; };
+        # Main desktop WSL
+        keter = lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ (import ./hosts/keter { inherit nixos-wsl; }) ];
+          specialArgs = {
+            inherit inputs outputs;
+          };
+        };
       };
     };
 }

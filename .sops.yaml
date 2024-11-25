@@ -1,0 +1,9 @@
+keys:
+  - &hosts:
+    - &keter age1uqwmgad826n3rjwjk2828nvsmfd2t7uus2s50tehkl0e0vd7nc8q8nqytm
+
+creation_rules:
+  - path_regex: hosts/common/secrets.ya?ml$
+    key_groups:
+    - age:
+      - *keter

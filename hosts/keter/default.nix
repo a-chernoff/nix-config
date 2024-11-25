@@ -1,8 +1,22 @@
+{ nixos-wsl }:
 {
   imports = [
+    nixos-wsl.nixosModules.wsl
+    # ./hardware-configuration.nix
+    
     ../common/global
     ../common/users/alex
   ];
+
+  wsl = {
+    enable = true;
+    useWindowsDriver = true;
+    wslConf = {
+      automount.root = "/mnt";
+    };
+    defaultUser = "alex";
+    startMenuLaunchers = true;
+  };
 
   networking = {
     hostName = "keter";
