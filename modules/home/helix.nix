@@ -4,6 +4,7 @@
   programs.helix = {
     enable = true;
     settings = {
+      editor.line-number = "relative";
       editor.true-color = true;
       editor.lsp = {
         display-messages = true;

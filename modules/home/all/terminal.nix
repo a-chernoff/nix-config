@@ -8,17 +8,23 @@
     };
     fzf.enable = true;
     jq.enable = true;
+    less.enable = true;
     nix-index = {
       enable = true;
       enableZshIntegration = true;
     };
     ripgrep.enable = true;
     starship.enable = true;
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
     zsh = {
       enable = true;
       autocd = true;
-      dotDir = ".config/zsh";
       autosuggestion.enable = true;
+      dotDir = ".config/zsh";
+      enableCompletion = true;
       syntaxHighlighting.enable = true;
     };
   };
