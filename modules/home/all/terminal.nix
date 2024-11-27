@@ -1,4 +1,12 @@
+{ flake, pkgs, ... }:
+
+let
+  inherit (flake) inputs;
+in
 {
+  imports = [
+    inputs.nix-index-database.hmModules.nix-index
+  ];
   programs = {
     bat.enable = true;
     btop.enable = true;
@@ -9,10 +17,6 @@
     fzf.enable = true;
     jq.enable = true;
     less.enable = true;
-    nix-index = {
-      enable = true;
-      enableZshIntegration = true;
-    };
     ripgrep.enable = true;
     starship.enable = true;
     zoxide = {
