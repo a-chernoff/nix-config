@@ -1,7 +1,9 @@
 {
-  imports =
-    with builtins;
-    map
-      (fn: ./${fn})
-      (filter (fn: fn != "default.nix") (attrNames (readDir ./.)));
+  imports = [
+    ./git.nix
+    ./helix.nix
+    ./shell.nix
+    ./all/nix.nix
+    ./all/terminal.nix
+  ];
 }
