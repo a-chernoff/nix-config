@@ -16,4 +16,3 @@
   programs.zsh.enable = true;
   system.stateVersion = "22.05";
 }
-
