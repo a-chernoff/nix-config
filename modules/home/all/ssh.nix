@@ -5,7 +5,6 @@
       "*" = {
         extraOptions = {
           addKeysToAgent = "yes";
-          useKeychain = "yes";
         };
       };
     };
