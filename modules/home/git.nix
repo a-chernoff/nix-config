@@ -1,15 +1,18 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  programs.gh = {
+    enable = true;
+  };
   programs.git = {
     enable = true;
     userName = "Alexander Chernoff";
-    userEmail = "chernoff.alex1@gmail.com";
+    userEmail = "alex@chernoff.xyz";
 
     difftastic.enable = true;
 
     extraConfig = {
-      branch.sort = "committerdate";
+      branch.sort = "-committerdate";
       core.untrackedCache = true;
       core.fsmonitor = true;
       commit.verbose = true;
@@ -29,8 +32,6 @@
 
     ignores = [
       ".DS_STORE"
-      ".vscode/"
-      ".idea/"
       ".direnv"
       "result"
     ];
