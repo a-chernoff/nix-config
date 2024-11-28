@@ -1,12 +1,10 @@
+{ pkgs, lib, ... }:
+
 {
   programs.ssh = {
     enable = true;
-    matchBlocks = {
-      "*" = {
-        extraOptions = {
-          addKeysToAgent = "yes";
-        };
-      };
-    };
+    addKeysToAgent = "yes";
   };
+
+  services.ssh-agent = lib.mkIf pkgs.stdenv.isLinux { enable = true; }; 
 }
