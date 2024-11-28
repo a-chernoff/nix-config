@@ -6,6 +6,7 @@
 
 {
   nixpkgs.hostPlatform = "x86_64-linux";
+  networking.hostName = "nacon";
   users.users."alex" = {
     isNormalUser = true;
     shell = pkgs.zsh;
