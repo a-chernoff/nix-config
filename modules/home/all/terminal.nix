@@ -1,4 +1,4 @@
-{ flake, pkgs, ... }:
+{ config, flake, pkgs, lib, ... }:
 
 let
   inherit (flake) inputs;
@@ -10,6 +10,14 @@ in
   programs = {
     bat.enable = true;
     btop.enable = true;
+    direnv = {
+      enable = true;
+      nix-direnv = {
+        enable = true;
+        package = lib.mkIf (config.nix.package != null)
+          (pkgs.nix-direnv.override { nix = config.nix.package; });
+      };
+    };
     eza = {
       enable = true;
       enableZshIntegration = true;
