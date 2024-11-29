@@ -13,6 +13,9 @@ in
   ];
 
   home-manager.users."alex" = {
-    imports = [ (self + /configurations/home/alex.nix) ];
+    imports = [
+      (self + /configurations/home/alex.nix)
+      (self + /modules/home/all/wsl-open.nix)
+    ];
   };
 }
