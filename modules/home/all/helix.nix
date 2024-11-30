@@ -1,12 +1,12 @@
 { config, lib, pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.nixd
-    pkgs.nixfmt-rfc-style
-  ];
   programs.helix = {
     enable = true;
+    extraPackages = [
+      pkgs.nixd
+      pkgs.nixfmt-rfc-style
+    ];
     settings = {
       editor.line-number = "relative";
       editor.true-color = true;
