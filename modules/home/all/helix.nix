@@ -8,6 +8,7 @@
       pkgs.nixfmt-rfc-style
     ];
     settings = {
+      theme = "kanagawa";
       editor.line-number = "relative";
       editor.true-color = true;
       editor.lsp = {
