@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ flake, pkgs, ... }:
 
 {
   programs.helix = {
@@ -20,7 +20,9 @@
     languages = {
       language-server.nixd = {
         command = "nixd";
-        args = [];
+        # as of nixos 24.05, <nixpkgs> should be set to the flake used to
+        # build the system
+        config.nixpkgs.expr = "import <nixpkgs> {}";
       };
       language = [{
         name = "nix";
