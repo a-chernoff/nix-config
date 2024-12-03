@@ -16,7 +16,6 @@ in
   ];
   home.username = "alex";
   home.homeDirectory = lib.mkDefault "/${if pkgs.stdenv.isDarwin then "Users" else "home"}/alex";
-  home.stateVersion = "23.05";
 
   programs.helix.defaultEditor = true;
 }
