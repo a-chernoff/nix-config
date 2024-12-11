@@ -18,5 +18,6 @@ in
       (self + /configurations/home/alex.nix)
       (self + /modules/home/all/wsl-open.nix)
     ];
+    home.stateVersion = "22.11";
   };
 }
