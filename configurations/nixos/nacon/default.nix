@@ -7,7 +7,7 @@ in
 {
   imports = [
     inputs.nixos-wsl.nixosModules.default
-    self.nixosModules.default
+    self.nixosModules.common
     self.nixosModules.wsl
     self.nixosModules.gc
     ./configuration.nix
