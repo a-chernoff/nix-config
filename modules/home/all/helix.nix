@@ -8,7 +8,7 @@
       pkgs.nixfmt-rfc-style
     ];
     settings = {
-      theme = "kanagawa";
+      theme = "zed_onedark";
       editor.line-number = "relative";
       editor.true-color = true;
       editor.lsp = {
@@ -24,12 +24,26 @@
         # build the system
         config.nixpkgs.expr = "import <nixpkgs> {}";
       };
-      language = [{
-        name = "nix";
-        file-types = [ "nix" ];
-        formatter = { command = "nixfmt"; };
-        language-servers = [ "nixd" ];
-      }];
+      language = [
+        {
+          name = "haskell";
+          roots = [
+            "Setup.hs"
+            "stack.yaml"
+            "*.cabal"
+          ];
+          auto-format = true;
+        }
+        {
+          name = "nix";
+          file-types = [ "nix" ];
+          formatter = {
+            command = "nixfmt";
+          };
+          auto-format = true;
+          language-servers = [ "nixd" ];
+        }
+      ];
     };
   };
 }
