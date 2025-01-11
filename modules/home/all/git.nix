@@ -19,9 +19,6 @@
       pull.rebase = true;
       rebase.autosquash = true;
       rerere.enabled = true;
-      transfer.fsckobjects = true;
-      fetch.fsckobjects = true;
-      receive.fsckobjects = true;
     };
 
     aliases = {
