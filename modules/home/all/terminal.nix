@@ -1,4 +1,10 @@
-{ config, flake, pkgs, lib, ... }:
+{
+  config,
+  flake,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   inherit (flake) inputs;
@@ -23,8 +29,9 @@ in
       enable = true;
       nix-direnv = {
         enable = true;
-        package = lib.mkIf (config.nix.package != null)
-          (pkgs.nix-direnv.override { nix = config.nix.package; });
+        package = lib.mkIf (config.nix.package != null) (
+          pkgs.nix-direnv.override { nix = config.nix.package; }
+        );
       };
     };
     eza = {
