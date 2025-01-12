@@ -9,5 +9,8 @@
     { self', pkgs, ... }:
     {
       formatter = pkgs.nixfmt-rfc-style;
+      packages = {
+        berkeley-mono = pkgs.callPackage ../../packages/berkeley-mono.nix { };
+      };
     };
 }
