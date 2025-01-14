@@ -14,6 +14,7 @@ in
     inputs.nix-index-database.hmModules.nix-index
   ];
   home.packages = [
+    pkgs.dig.dnsutils
     pkgs.moreutils
     pkgs.fd
     pkgs.file
