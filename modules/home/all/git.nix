@@ -28,6 +28,7 @@
     ignores = [
       ".DS_STORE"
       ".direnv"
+      ".envrc"
       "result"
     ];
 
