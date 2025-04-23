@@ -29,6 +29,7 @@
       ".DS_STORE"
       ".direnv"
       ".envrc"
+      ".jj"
       "result"
     ];
 
