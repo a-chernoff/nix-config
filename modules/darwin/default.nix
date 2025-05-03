@@ -14,6 +14,7 @@ in
       home-manager.users."achernoff" = { };
       home-manager.sharedModules = [
         self.homeModules.default
+        self.homeModules.jj
       ];
     }
     self.nixosModules.common
