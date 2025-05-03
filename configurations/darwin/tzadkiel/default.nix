@@ -7,12 +7,17 @@ in
 {
   imports = [
     self.darwinModules.default
+    ./configuration.nix
   ];
 
   nixpkgs.hostPlatform = "aarch64-darwin";
   networking.hostName = "tzadkiel";
 
   security.pam.enableSudoTouchIdAuth = true;
+
+  home-manager.users.achernoff = {
+    home.stateVersion = "24.11";
+  };
 
   system.defaults = {
     dock = {
