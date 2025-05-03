@@ -8,10 +8,10 @@ in
   imports = [
     {
       # For home-manager to work
-      users.users.${config.me.username} = {
-        home = "/Users/${config.me.username}";
+      users.users."achernoff" = {
+        home = "/Users/achernoff";
       };
-      home-manager.users.${config.me.username} = { };
+      home-manager.users."achernoff" = { };
       home-manager.sharedModules = [
         self.homeModules.default
       ];
