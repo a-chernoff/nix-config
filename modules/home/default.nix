@@ -5,7 +5,6 @@
     ./all/nix-output-monitor.nix
     ./all/ssh.nix
     ./all/terminal.nix
-    ./all/zellij.nix
     ./all/zsh.nix
   ];
 }
