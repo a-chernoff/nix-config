@@ -4,11 +4,6 @@
   nixpkgs.hostPlatform = "aarch64-darwin";
   networking.hostName = "tzadkiel";
 
-  users.users."achernoff" = {
-    isNormalUser = true;
-    shell = pkgs.zsh;
-  };
-
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = [
