@@ -8,7 +8,7 @@
       pkgs.nixfmt-rfc-style
     ];
     settings = {
-      theme = "zed_onedark";
+      theme = "zed_onelight";
       editor.line-number = "relative";
       editor.true-color = true;
       editor.lsp = {

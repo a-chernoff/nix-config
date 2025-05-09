@@ -46,7 +46,37 @@ in
     jq.enable = true;
     less.enable = true;
     ripgrep.enable = true;
-    starship.enable = true;
+    starship = {
+      enable = true;
+      settings = {
+        custom.jj = {
+          command = ''
+            jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 --template '
+              separate(" ",
+                change_id.shortest(4),
+                bookmarks,
+                "|",
+                concat(
+                  if(conflict, "conflict"),
+                  if(divergent, "divergent"),
+                  if(hidden, "hidden"),
+                  if(immutable, "immutable"),
+                ),
+                raw_escape_sequence("\x1b[1;32m") ++ if(empty, "(empty)"),
+                raw_escape_sequence("\x1b[1;32m") ++ coalesce(
+                  truncate_end(29, description.first_line(), "..."),
+                  "(no description set)",
+                ) ++ raw_escape_sequence("\x1b[0m"),
+              )
+            '
+          '';
+          ignore_timeout = true;
+          description = "The current jj status";
+          detect_folders = [ ".jj" ];
+          symbol = "jj ";
+        };
+      };
+    };
     zoxide = {
       enable = true;
       enableZshIntegration = true;
