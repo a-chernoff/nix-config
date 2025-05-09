@@ -30,6 +30,7 @@
       ".direnv"
       ".envrc"
       ".jj"
+      "*.xcodeproj/xcuserdata"
       "result"
     ];
 
