@@ -10,6 +10,10 @@
     pkgs.helix
   ];
 
+  environment.variables = {
+    EDITOR = "hx";
+  };
+
   system.configurationRevision = flake.rev or flake.dirtyRev or null;
   system.stateVersion = 5;
 }
