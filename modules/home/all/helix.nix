@@ -8,14 +8,23 @@
       pkgs.nixfmt-rfc-style
     ];
     settings = {
-      theme = "zed_onelight";
-      editor.line-number = "relative";
-      editor.true-color = true;
-      editor.lsp = {
-        display-messages = true;
-        display-inlay-hints = true;
-        display-signature-help-docs = true;
+      editor = {
+        auto-save = true;
+        cursorline = true;
+        gutters = [
+          "diagnostics"
+          "line-numbers"
+        ];
+        line-number = "relative";
+        lsp = {
+          display-messages = true;
+          display-inlay-hints = true;
+          display-signature-help-docs = true;
+        };
+        soft-wrap.enable = true;
+        true-color = true;
       };
+      theme = "zed_onelight";
     };
     languages = {
       language-server.nixd = {
