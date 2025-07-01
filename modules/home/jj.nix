@@ -6,7 +6,7 @@
         name = "Alexander Chernoff";
         email = "alex@chernoff.xyz";
       };
-      ui.diff.tool = [
+      ui.diff-formatter = [
         "difft"
         "--color=always"
         "$left"
