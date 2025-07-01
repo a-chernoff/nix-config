@@ -13,7 +13,7 @@ in
   nixpkgs.hostPlatform = "aarch64-darwin";
   networking.hostName = "tzadkiel";
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   home-manager.users.achernoff = {
     home.stateVersion = "24.11";
@@ -40,4 +40,6 @@ in
       AppleKeyboardUIMode = 3;
     };
   };
+
+  system.primaryUser = "achernoff";
 }

@@ -20,9 +20,6 @@ in
     self.nixosModules.common
   ];
 
-  # Auto upgrade nix package and daemon
-  services.nix-daemon.enable = true;
-
   # Disable AdLib
   system.defaults.CustomSystemPreferences."com.apple.AdLib" = {
     allowApplePersonalizedAdvertising = false;
